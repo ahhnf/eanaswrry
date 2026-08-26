@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>I'm Sorry, Eanaa ❤️</title>
+
+    <style>
+
+        /* =========================
+           BASIC RESET
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            overflow: hidden;
+            background: #ffdce6;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            position: relative;
+        }
+
+
+        /* =========================
+           MAIN PAGE
+        ========================== */
+
+        .page {
+            width: 100vw;
+            height: 100vh;
+            height: 100svh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        /* =========================
+           SOFT CENTER GLOW
+        ========================== */
+
+        .glow {
+            position: absolute;
+
+            width: 420px;
+            height: 420px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255, 255, 255, 0.23);
+
+            filter: blur(55px);
+
+            pointer-events: none;
+        }
+
+
+        /* =========================
+           APOLOGY MESSAGE
+        ========================== */
+
+        .message {
+            position: relative;
+
+            z-index: 10;
+
+            width: min(600px, 72vw);
+
+            padding: 35px 30px;
+
+            text-align: center;
+
+            color: #713b4b;
+
+            font-size:
+                clamp(19px, 2.2vw, 27px);
+
+            line-height: 1.65;
+
+            font-weight: 500;
+
+            animation:
+                messageAppear 1.5s ease forwards;
+        }
+
+
+        .message p {
+            text-shadow:
+                0 2px 10px
+                rgba(113, 59, 75, 0.08);
+        }
+
+
+        /* =========================
+           PHOTOS
+        ========================== */
+
+        .photo {
+            position: absolute;
+
+            z-index: 5;
+
+            width: 145px;
+            height: 175px;
+
+            object-fit: cover;
+
+            border:
+                7px solid
+                rgba(255, 255, 255, 0.92);
+
+            border-radius: 14px;
+
+            box-shadow:
+                0 12px 30px
+                rgba(113, 59, 75, 0.15),
+
+                0 3px 8px
+                rgba(113, 59, 75, 0.08);
+
+            will-change: transform;
+        }
+
+
+        /* TOP LEFT */
+
+        .photo1 {
+            left: 8%;
+            top: 17%;
+
+            transform:
+                rotate(-9deg);
+
+            animation:
+                floatOne 5s
+                ease-in-out
+                infinite;
+        }
+
+
+        /* TOP RIGHT */
+
+        .photo2 {
+            right: 8%;
+            top: 14%;
+
+            transform:
+                rotate(8deg);
+
+            animation:
+                floatTwo 5.5s
+                ease-in-out
+                infinite;
+        }
+
+
+        /* BOTTOM LEFT */
+
+        .photo3 {
+            left: 9%;
+            bottom: 13%;
+
+            transform:
+                rotate(7deg);
+
+            animation:
+                floatThree 6s
+                ease-in-out
+                infinite;
+        }
+
+
+        /* BOTTOM RIGHT */
+
+        .photo4 {
+            right: 9%;
+            bottom: 12%;
+
+            transform:
+                rotate(-8deg);
+
+            animation:
+                floatFour 5.2s
+                ease-in-out
+                infinite;
+        }
+
+
+        /* =========================
+           FALLING SORRY TEXT
+        ========================== */
+
+        .falling-container {
+            position: fixed;
+
+            inset: 0;
+
+            overflow: hidden;
+
+            pointer-events: none;
+
+            z-index: 20;
+        }
+
+
+        .sorry {
+            position: absolute;
+
+            top: -50px;
+
+            color:
+                rgba(190, 92, 116, 0.48);
+
+            font-size:
+                clamp(14px, 1.5vw, 20px);
+
+            font-weight: 600;
+
+            white-space: nowrap;
+
+            animation-name: fall;
+
+            animation-timing-function:
+                linear;
+
+            animation-fill-mode:
+                forwards;
+
+            will-change: transform;
+        }
+
+
+        /* =========================
+           MESSAGE APPEAR
+        ========================== */
+
+        @keyframes messageAppear {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        /* =========================
+           FLOATING PHOTO 1
+        ========================== */
+
+        @keyframes floatOne {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    rotate(-9deg);
+            }
+
+            50% {
+                transform:
+                    translateY(-13px)
+                    rotate(-6deg);
+            }
+        }
+
+
+        /* =========================
+           FLOATING PHOTO 2
+        ========================== */
+
+        @keyframes floatTwo {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    rotate(8deg);
+            }
+
+            50% {
+                transform:
+                    translateY(15px)
+                    rotate(11deg);
+            }
+        }
+
+
+        /* =========================
+           FLOATING PHOTO 3
+        ========================== */
+
+        @keyframes floatThree {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    rotate(7deg);
+            }
+
+            50% {
+                transform:
+                    translateY(-15px)
+                    rotate(4deg);
+            }
+        }
+
+
+        /* =========================
+           FLOATING PHOTO 4
+        ========================== */
+
+        @keyframes floatFour {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    rotate(-8deg);
+            }
+
+            50% {
+                transform:
+                    translateY(12px)
+                    rotate(-11deg);
+            }
+        }
+
+
+        /* =========================
+           FALLING ANIMATION
+        ========================== */
+
+        @keyframes fall {
+
+            from {
+                transform:
+                    translate3d(0, -50px, 0)
+                    rotate(0deg);
+
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 0.65;
+            }
+
+            to {
+                transform:
+                    translate3d(
+                        var(--drift),
+                        110vh,
+                        0
+                    )
+                    rotate(var(--rotation));
+
+                opacity: 0;
+            }
+        }
+
+
+        /* =========================
+           TABLET / MOBILE
+        ========================== */
+
+        @media (max-width: 700px) {
+
+            .message {
+                width: 76vw;
+
+                padding: 20px;
+
+                font-size: 18px;
+
+                line-height: 1.6;
+            }
+
+
+            .photo {
+                width: 105px;
+                height: 130px;
+
+                border-width: 5px;
+
+                border-radius: 11px;
+            }
+
+
+            .photo1 {
+                left: 3%;
+                top: 8%;
+            }
+
+
+            .photo2 {
+                right: 3%;
+                top: 7%;
+            }
+
+
+            .photo3 {
+                left: 3%;
+                bottom: 7%;
+            }
+
+
+            .photo4 {
+                right: 3%;
+                bottom: 7%;
+            }
+
+
+            .glow {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+
+        /* =========================
+           SMALL PHONES
+        ========================== */
+
+        @media (max-width: 420px) {
+
+            .message {
+                width: 78vw;
+
+                font-size: 16px;
+
+                line-height: 1.55;
+
+                padding: 15px;
+            }
+
+
+            .photo {
+                width: 82px;
+                height: 105px;
+
+                border-width: 4px;
+            }
+
+
+            .photo1 {
+                top: 7%;
+                left: 2%;
+            }
+
+
+            .photo2 {
+                top: 6%;
+                right: 2%;
+            }
+
+
+            .photo3 {
+                bottom: 5%;
+                left: 2%;
+            }
+
+
+            .photo4 {
+                bottom: 5%;
+                right: 2%;
+            }
+
+
+            .sorry {
+                font-size: 13px;
+            }
+        }
+
+
+        /* =========================
+           REDUCED MOTION
+        ========================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .photo,
+            .message {
+                animation: none;
+            }
+
+            .sorry {
+                animation-duration: 12s;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <main class="page">
+
+        <!-- Soft background glow -->
+        <div class="glow"></div>
+
+
+        <!-- Falling Sorry texts -->
+        <div
+            class="falling-container"
+            id="fallingContainer"
+        ></div>
+
+
+        <!-- =========================
+             FOUR PHOTOS
+        ========================== -->
+
+        <img
+            src="images/photo1.jpeg"
+            alt=""
+            class="photo photo1"
+        >
+
+        <img
+            src="images/photo2.jpeg"
+            alt=""
+            class="photo photo2"
+        >
+
+        <img
+            src="images/photo3.jpeg"
+            alt=""
+            class="photo photo3"
+        >
+
+        <img
+            src="images/photo4.jpeg"
+            alt=""
+            class="photo photo4"
+        >
+
+
+        <!-- =========================
+             APOLOGY MESSAGE
+        ========================== -->
+
+        <div class="message">
+
+            <p>
+                Eanaa, am sorry if you're mad at me or if you hate me.
+                I know am bad but am trying to change myself and become
+                a better person. If I ever hurt you with my words or made
+                you feel bad, pls forgive me. Am genuinely sorry.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        /* =========================
+           FALLING SORRY SYSTEM
+        ========================== */
+
+        const container =
+            document.getElementById(
+                "fallingContainer"
+            );
+
+
+        const words = [
+            "Sorry",
+            "I'm sorry",
+            "Sorry ❤️",
+            "Forgive me",
+            "I'm genuinely sorry",
+            "Sorry..."
+        ];
+
+
+        function createSorry() {
+
+            const element =
+                document.createElement("span");
+
+
+            element.className = "sorry";
+
+
+            element.textContent =
+                words[
+                    Math.floor(
+                        Math.random() *
+                        words.length
+                    )
+                ];
+
+
+            /* Random horizontal position */
+
+            const startX =
+                Math.random() *
+                window.innerWidth;
+
+
+            /* Slight sideways movement */
+
+            const drift =
+                (
+                    Math.random() * 160 - 80
+                ) + "px";
+
+
+            /* Slight rotation */
+
+            const rotation =
+                (
+                    Math.random() * 20 - 10
+                ) + "deg";
+
+
+            /* Falling speed */
+
+            const duration =
+                5 + Math.random() * 4;
+
+
+            /* Random starting delay */
+
+            const delay =
+                Math.random() * 1.5;
+
+
+            element.style.left =
+                startX + "px";
+
+
+            element.style.setProperty(
+                "--drift",
+                drift
+            );
+
+
+            element.style.setProperty(
+                "--rotation",
+                rotation
+            );
+
+
+            element.style.animationDuration =
+                duration + "s";
+
+
+            element.style.animationDelay =
+                delay + "s";
+
+
+            container.appendChild(element);
+
+
+            /*
+             * Remove old elements so the page
+             * stays lightweight and smooth.
+             */
+
+            setTimeout(() => {
+
+                element.remove();
+
+            }, (duration + delay) * 1000 + 300);
+        }
+
+
+        /* =========================
+           START ANIMATION
+        ========================== */
+
+        window.addEventListener(
+            "load",
+            () => {
+
+                /*
+                 * Create the first group
+                 * immediately after opening.
+                 */
+
+                for (
+                    let i = 0;
+                    i < 12;
+                    i++
+                ) {
+
+                    setTimeout(
+                        () => {
+                            createSorry();
+                        },
+                        i * 250
+                    );
+
+                }
+
+
+                /*
+                 * Continue creating falling
+                 * texts at a controlled rate.
+                 */
+
+                setInterval(
+                    () => {
+                        createSorry();
+                    },
+                    650
+                );
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
